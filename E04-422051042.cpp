@@ -439,11 +439,12 @@ int main()
 		meshList[0]->RenderMesh(); // renderizar cubo
 
 		/*
-		* articulacion 4, extremo derecho del segundo brazo
+		* articulacion 4
 		*/
 		model = modelaux;
 		model = glm::translate(model, glm::vec3(2.5f, 0.0f, 0.0f));
-		model = glm::rotate(model, glm::radians(mainWindow.getarticulacion4()), glm::vec3(0.0f, 0.0f, 1.0f));// J
+		model = glm::rotate(model, glm::radians(-135.0f), glm::vec3(0.0f, 0.0f, 1.0f)); // reiniciar ejes
+		model = glm::rotate(model, glm::radians(mainWindow.getarticulacion4()), glm::vec3(0.0f, 1.0f, 0.0f));// J
 		//dibujar una pequeña esfera
 		modelaux = model; // evitamos heradar el escalamiento de abajo
 		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
@@ -454,8 +455,6 @@ int main()
 		* dibujo de la canasta
 		*/
 		model = modelaux;
-		model = glm::translate(model, glm::vec3(1.0f, 0.0f, 0.0f));
-		model = glm::rotate(model, glm::radians(-135.0f), glm::vec3(0.0f, 0.0f, 1.0f)); // reiniciar ejes
 		modelaux = model;
 		model = glm::scale(model, glm::vec3(1.5f, 2.0f, 1.5f));
 		color = glm::vec3(1.0f, 1.0f, 1.0f);
