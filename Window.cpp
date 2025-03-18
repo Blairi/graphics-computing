@@ -128,9 +128,9 @@ void Window::ManejaTeclado(GLFWwindow* window, int key, int code, int action, in
 	if (key == GLFW_KEY_F)
 	{
 		static int signo = 1; // persistir signo
-		if (theWindow->articulacion1 >= 45.0f)
+		if (theWindow->articulacion1 >= 60.0f)
 			signo = -1;
-		else if (theWindow->articulacion1 <= -45.0f)
+		else if (theWindow->articulacion1 == 0.0f)
 			signo = 1;
 
 		theWindow->articulacion1 += (signo * 5.0f);
@@ -138,23 +138,11 @@ void Window::ManejaTeclado(GLFWwindow* window, int key, int code, int action, in
 
 	if (key == GLFW_KEY_G)
 	{
-		static int signo = 1; // persistir signo
-		if (theWindow->articulacion2 >= 45.0f)
-			signo = -1;
-		else if (theWindow->articulacion2 <= -45.0f)
-			signo = 1;
-
-		theWindow->articulacion2 += (signo * 5.0f);
+		theWindow->articulacion2 += 5.0f;
 	}
 	if (key == GLFW_KEY_H)
 	{
-		static int signo = 1; // persistir signo
-		if (theWindow->articulacion3 >= 45.0f)
-			signo = -1;
-		else if (theWindow->articulacion3 <= -45.0f)
-			signo = 1;
-
-		theWindow->articulacion3 += (signo * 5.0f);
+		theWindow->articulacion3 += 5.0f;
 	}
 	if (key == GLFW_KEY_J)
 	{
